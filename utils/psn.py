@@ -1,6 +1,5 @@
 from psnawp_api import PSNAWP
-
-
+import traceback
 def get_profile(token: str, online_id: str):
     api = PSNAWP(token)
 
@@ -13,6 +12,7 @@ def get_profile(token: str, online_id: str):
 
         return {"success": True, "data": data}
     except Exception:  # noqa
+        traceback.print_exc()
         return {
             "success": False,
             "error": f"We are unable to find your playstation account with PSN '{online_id}'",
