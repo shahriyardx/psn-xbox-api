@@ -8,6 +8,6 @@ from utils.env import env
 
 config = Config()
 config.bind = f"{env.HOST}:{env.PORT}"
-config.use_reloader = True
+config.use_reloader = False
 
 asyncio.run(serve(app, config))
